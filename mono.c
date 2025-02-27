@@ -10,6 +10,7 @@ void extractAllChannels(string filename_in, string filename_out_pattern) {
 	char filename_out[128];
 
 	for (uint16_t i = 0; i < header.NbrChannels; i++) {
+		fseek(fp_in, 0, SEEK_SET);
 		memset(filename_out, 0, 128);
 		sprintf(filename_out, "%s_%hu.wav", filename_out_pattern, i);
 
