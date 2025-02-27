@@ -18,6 +18,8 @@ int main(int argc, char** argv) {
 
 		extractChannel(fp_in, fp_out, chanId);
 
+		fclose(fp_in);
+
 		return_code = EXIT_SUCCESS;
 	}
 

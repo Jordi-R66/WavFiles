@@ -67,6 +67,6 @@ void extractChannel(FILE* fp_in, FILE* fp_out, uint16_t ChannelId) {
 		}
 	}
 
-	fclose(fp_in);
+	//fclose(fp_in);
 	fclose(fp_out);
 }
