@@ -24,5 +24,8 @@ typedef struct Header Header;
 
 // Functions
 
+/* Reads header from file */
+Header readHeader(string filename_in);
+
 /* Generate the header for a file that would have lost a channel */
 Header oneChannelHeader(Header originalHeader);

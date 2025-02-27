@@ -1,6 +1,10 @@
 #include "mono.h"
 #include "wav_structs.h"
 
+void extractAllChannels(string filename_in, string filename_out) {
+	
+}
+
 void extractChannel(FILE* fp_in, FILE* fp_out, uint16_t ChannelId) {
 	char buffer[4096];		// buffer utilisé pour les lectures/écritures
 
@@ -38,10 +42,10 @@ void extractChannel(FILE* fp_in, FILE* fp_out, uint16_t ChannelId) {
 	// Écriture du nouvel header dans le fichier de sortie
 	nbwrote = fwrite(&header_out, sizeof(Header), 1, fp_out);
 
-	if (nbwrote != sizeof(Header)) {
+	/*if (nbwrote != sizeof(Header)) {
 		fprintf(stderr, "Couldn't write properly output's header\n");
 		exit(EXIT_FAILURE);
-	}
+	}*/
 
 	// [3] Lecture des données du fichier en entrée (par blocs de 4096 octets)
 	// et écriture dans le fichier en sortie des octets correspondant aux
