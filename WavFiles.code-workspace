@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.py3": "python",
+			"stdbool.h": "c"
+		}
+	}
+}
