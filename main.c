@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 		FILE* fp_in = fopen(filename_in, "r");
 		FILE* fp_out = fopen(filename_out, "w");
 
-		extractChannel(fp_in, fp_out, 1);
+		extractChannel(fp_in, fp_out, chanId);
 
 		return_code = EXIT_SUCCESS;
 	}
