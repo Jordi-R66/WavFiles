@@ -59,10 +59,9 @@ void extractChannel(FILE* fp_in, FILE* fp_out, uint16_t ChannelId) {
 		nbread = fread(buffer, 1, BytesToRead, fp_in);
 
 		if (nbread > 0) {
-			nbwrote = write(fp_out, buffer, BytesToRead / 2);
+			nbwrote = fwrite(buffer + ChannelId, 1, BytesToRead / header_in.ChannelNumber, fp_out);
 		}
 	}
-
 
 	fclose(fp_in);
 	fclose(fp_out);
