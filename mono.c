@@ -1,8 +1,23 @@
 #include "mono.h"
 #include "wav_structs.h"
 
-void extractAllChannels(string filename_in, string filename_out) {
-	
+#include "string.h"
+
+void extractAllChannels(string filename_in, string filename_out_pattern) {
+	Header header = readHeader(filename_in);
+
+	FILE* fp_in = fopen(filename_in, "r");
+	char filename_out[128];
+
+	for (uint16_t i = 0; i < header.NbrChannels; i++) {
+		memset(filename_out, 0, 128);
+		sprintf(filename_out, "%s_%hu.wav", filename_out_pattern, i);
+
+		FILE* fp_out = fopen(filename_out, "w");
+		extractChannel(fp_in, fp_out, i);
+	}
+
+	fclose(fp_in);
 }
 
 void extractChannel(FILE* fp_in, FILE* fp_out, uint16_t ChannelId) {
