@@ -10,9 +10,9 @@ struct Header {
 	uint32_t FormatBlocID;
 	uint32_t BlockSize;
 	uint16_t AudioFormat;
-	uint16_t ChannelNumber;
-	uint32_t SampleRate;
-	uint32_t ByteRate; // BytePerSec
+	uint16_t NbrChannels;
+	uint32_t Frequency;
+	uint32_t BytePerSec; // BytePerSec
 	uint16_t BytePerBlock;
 	uint16_t BitsPerSample;
 

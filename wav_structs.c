@@ -3,11 +3,11 @@
 Header oneChannelHeader(Header originalHeader) {
 	Header output = *(&originalHeader);
 
-	output.DataSize /= originalHeader.ChannelNumber;
+	output.DataSize /= originalHeader.NbrChannels;
 	output.FileSize = sizeof(Header) + output.DataSize - 8;
-	output.ChannelNumber = 1;
-	output.ByteRate /= originalHeader.ChannelNumber;
-	output.BytePerBlock /= originalHeader.ChannelNumber;
+	output.NbrChannels = 1;
+	output.BytePerSec /= originalHeader.NbrChannels;
+	output.BytePerBlock /= originalHeader.NbrChannels;
 
 	return output;
 }
