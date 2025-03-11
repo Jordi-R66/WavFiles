@@ -45,8 +45,8 @@ void extractChannel(FILE* fp_in, FILE* fp_out, uint16_t ChannelId) {
 
 	printf("%X\n", __STDC_VERSION__);
 
-	bool isRightFormat = header_in.FileTypeBlockID == 0x46'46'49'52
-						&& header_in.FileFormatID == 0x45'56'41'57;
+	bool isRightFormat = header_in.FileTypeBlockID == 0x46464952
+						&& header_in.FileFormatID == 0x45564157;
 
 	if (!isRightFormat) {
 		fprintf(stderr, "The file given in entry isn't a wave file.\n");

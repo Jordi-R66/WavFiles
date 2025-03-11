@@ -142,7 +142,7 @@ extractChannel:
 	mov	rax, QWORD PTR 28[rax]
 	mov	QWORD PTR -4180[rbp], rax
 	mov	QWORD PTR -4172[rbp], rdx
-	mov	esi, 202000
+	mov	esi, 201710
 	lea	rax, .LC4[rip]
 	mov	rdi, rax
 	mov	eax, 0
@@ -273,5 +273,5 @@ extractChannel:
 	.cfi_endproc
 .LFE1:
 	.size	extractChannel, .-extractChannel
-	.ident	"GCC: (Debian 14.2.0-16) 14.2.0"
+	.ident	"GCC: (Debian 12.2.0-14) 12.2.0"
 	.section	.note.GNU-stack,"",@progbits
